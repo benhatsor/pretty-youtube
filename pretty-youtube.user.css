@@ -49,7 +49,8 @@
         margin-left: 0;
         margin-right: 0;
     }
-    ytd-player .iv-branding {
+    ytd-player .iv-branding,
+    #player .html5-video-player .iv-branding {
         display: none;
     }
     ytd-player .ytp-next-button,
@@ -114,7 +115,8 @@
     ytd-watch-metadata.ytd-watch-flexy {
         margin-top: var(--ytd-margin-6x);
     }
-    ytd-watch-metadata #title #super-title {
+    ytd-watch-metadata #title #super-title,
+    ytd-watch-metadata #title .yt-simple-endpoint {
         display: none;
     }
     ytd-watch-metadata #title h1 {
@@ -206,8 +208,7 @@
     .more-button.ytd-comment-renderer, .less-button.ytd-comment-renderer {
         text-decoration: none !important;
     }
-    ytd-watch-metadata #description div[slot="extra-content"] ytd-video-description-music-section-renderer {
-        padding-top: 0;
+    ytd-watch-metadata #description div[slot="extra-content"] ytd-video-description-music-section-renderer:last-of-type {
         padding-bottom: 0;
     }
     ytd-watch-metadata ytd-rich-list-header-renderer #title.ytd-rich-list-header-renderer {
@@ -216,12 +217,13 @@
     ytd-watch-metadata ytd-rich-list-header-renderer #navigation-button .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text {
         opacity: .7;
         margin-right: -16px;
+        background: transparent !important;
     }
     ytd-watch-metadata ytd-rich-list-header-renderer #navigation-button .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text:active {
-        opacity: 1;
+        opacity: 1 !important;
     }
     ytd-watch-metadata ytd-rich-list-header-renderer #navigation-button .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text yt-touch-feedback-shape {
-        display: none;
+        display: none !important;
     }
     ytd-watch-metadata #description div[slot="extra-content"] ytd-info-row-renderer:last-of-type {
         border-bottom: 0;
@@ -478,7 +480,11 @@
     #channel-container #buttons #subscribe-button button,
     ytd-channel-renderer #buttons #subscribe-button button,
     ytd-subscribe-button-renderer button.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal,
-    ytd-subscribe-button-renderer button.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover {
+    ytd-subscribe-button-renderer button.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover,
+    #subscribe button,
+    #subscribe-button a,
+    #subscribe button:hover,
+    #subscribe-button a:hover {
         background: transparent;
         border: 1px solid var(--yt-spec-10-percent-layer);
         color: var(--yt-spec-text-primary);
@@ -578,7 +584,7 @@
         margin: 0;
     }
     #content-attachment.ytd-backstage-post-renderer ytd-video-renderer.ytd-backstage-post-renderer, #content-attachment.ytd-backstage-post-renderer ytd-playlist-renderer.ytd-backstage-post-renderer {
-        border-radius: 14px;
+        border-radius: 4px;
     }
     yt-img-shadow.ytd-backstage-image-renderer {
         --yt-img-border-radius: 14px;
@@ -586,6 +592,11 @@
     ytd-menu-renderer.ytd-video-renderer {
         margin-top: -8px;
         margin-right: -8px;
+    }
+    ytd-video-renderer #channel-name.ytd-video-meta-block::after {
+        content: ' · ';
+        margin-left: 4px;
+        margin-right: 4px;
     }
     ytd-backstage-poll-renderer:not([is-image-poll]) .choice-info.ytd-backstage-poll-renderer {
         border-color: var(--yt-spec-10-percent-layer);
@@ -653,6 +664,15 @@
     }
     ytd-playlist-video-renderer[amsterdam] {
         border-radius: 4px;
+    }
+    ytd-browse[page-subtype=playlist][amsterdam] ytd-playlist-header-renderer.ytd-browse {
+        margin-left: 0;
+    }
+    ytd-playlist-video-list-renderer {
+        margin-right: 40px;
+    }
+    ytd-browse[page-subtype=playlist][amsterdam] ytd-two-column-browse-results-renderer.ytd-browse {
+        margin-left: 20px;
     }
     ytd-hero-playlist-thumbnail-renderer ytd-thumbnail-overlay-hover-text-renderer {
         transition: none;
@@ -722,6 +742,15 @@
         display: none;
     }
     #player .html5-video-player .ytp-title-channel .ytp-title-expanded-subtitle {
+        display: none;
+    }
+    #player .html5-video-player .ytp-chrome-top :is(.ytp-watch-later-button, .ytp-share-button) {
+        display: none;
+    }
+    #player .html5-video-player .ytp-chrome-top .ytp-title-channel .ytp-sb {
+        display: none;
+    }
+    #player .html5-video-player .ytp-button.ytp-youtube-button {
         display: none;
     }
 }
