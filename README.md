@@ -4,7 +4,7 @@ Pretty YouTube without excess stuff.
 
 <img src="screenshots.png">
 
-# Additional features
+# Features
 - Removed recommendations
 - Only see comments hearted by the creator
 - Made subscribe, join, super thanks buttons more subtle
