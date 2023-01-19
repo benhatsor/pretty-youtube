@@ -8,6 +8,7 @@ Pretty YouTube without excess stuff.
 - Removed recommendations
 - Only see comments hearted by the creator
 - Made subscribe, join, super thanks buttons more subtle
+- General improvements
 
 And more!
 
