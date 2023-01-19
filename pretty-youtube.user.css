@@ -478,6 +478,7 @@
         display: none;
     }
     #channel-container #buttons #subscribe-button button,
+    #channel-container #buttons #sponsor-button button,
     ytd-channel-renderer #buttons #subscribe-button button,
     ytd-subscribe-button-renderer button.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal,
     ytd-subscribe-button-renderer button.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover,
