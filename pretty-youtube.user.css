@@ -6,9 +6,9 @@
 @author         barhatsor
 
 @preprocessor stylus
-@var checkbox show_search   'Show search' 0
 @var checkbox show_view_counts   'Show view counts' 0
 @var checkbox show_all_comments   'Show all comments' 0
+@var checkbox show_search   'Show search' 0
 @var checkbox show_subscribers   'Show subscriber counts' 0
 @var checkbox show_verified_badges   'Show verified badges' 0
 ==/UserStyle== */
