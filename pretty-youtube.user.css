@@ -243,7 +243,7 @@
         border: 0;
     }
     ytd-watch-flexy[flexy][js-panel-height_] #playlist.ytd-watch-flexy {
-        transition: .18s ease-in-out;
+        transition: .1s cubic-bezier(0,0,0.2,1);
         overflow: hidden;
         border-radius: 12px;
     }
