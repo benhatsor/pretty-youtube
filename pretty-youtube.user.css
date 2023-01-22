@@ -275,14 +275,16 @@
     ytd-engagement-panel-title-header-renderer #visibility-button button {
         margin-right: calc(16px - (40px / 2 - 24px / 2));
     }
-    ytd-playlist-panel-video-renderer[selected][use-color-palette], ytd-playlist-panel-video-renderer[selected][use-color-palette]:hover:not(.dragging) {
+    ytd-playlist-panel-video-renderer[selected][use-color-palette], ytd-playlist-panel-video-renderer[selected][use-color-palette]:hover:not(.dragging),
+    ytd-macro-markers-list-item-renderer:hover, ytd-macro-markers-list-item-renderer[active] {
         background-color: var(--yt-spec-badge-chip-background);
     }
     ytd-playlist-panel-renderer[collapsible][collapsed][use-color-palette] .header.ytd-playlist-panel-renderer {
         background-color: var(--yt-spec-brand-background-primary);
         --iron-icon-fill-color: var(--yt-spec-text-primary);
     }
-    ytd-playlist-panel-video-renderer[selected][use-color-palette] #video-title.ytd-playlist-panel-video-renderer {
+    ytd-playlist-panel-video-renderer[selected][use-color-palette] #video-title.ytd-playlist-panel-video-renderer,
+    ytd-macro-markers-list-item-renderer:not([carousel-type=MACRO_MARKERS_LIST_ITEM_RENDERER_CAROUSEL_TYPE_TEXT_ONLY]) h4.ytd-macro-markers-list-item-renderer{
         color: var(--yt-spec-text-primary);
     }
     ytd-playlist-panel-renderer[collapsible][collapsed][use-color-palette] .title.ytd-playlist-panel-renderer, ytd-playlist-panel-renderer[collapsible][collapsed][use-color-palette] #next-video-title.ytd-playlist-panel-renderer {
@@ -299,6 +301,13 @@
     }
     yt-formatted-string[has-link-only_]:not([force-default-style]) a.yt-simple-endpoint.yt-formatted-string:visited {
         color: var(--yt-endpoint-color,var(--yt-spec-text-primary));
+    }
+    ytd-macro-markers-list-item-renderer:hover #time.ytd-macro-markers-list-item-renderer, ytd-macro-markers-list-item-renderer[active] #time.ytd-macro-markers-list-item-renderer {
+        color: var(--yt-spec-themed-blue);
+        background-color: var(--yt-spec-suggested-action);
+    }
+    .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+        color: var(--yt-spec-text-primary) !important;
     }
     .index-message-wrapper.ytd-playlist-panel-renderer {
         opacity: .72;
