@@ -242,6 +242,14 @@
     #container.ytd-playlist-panel-renderer {
         border: 0;
     }
+    ytd-watch-flexy[flexy][js-panel-height_] #playlist.ytd-watch-flexy {
+        transition: .18s ease-in-out;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+    ytd-watch-flexy[flexy][js-panel-height_] #playlist.ytd-watch-flexy[collapsed] {
+      max-height: 66px !important;
+    }
     ytd-engagement-panel-title-header-renderer #header {
         padding-left: 0;
     }
