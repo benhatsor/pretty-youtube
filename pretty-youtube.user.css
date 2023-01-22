@@ -375,7 +375,7 @@
         padding-top: var(--ytd-margin-2x);
     }
     if (!show_all_comments) {
-        ytd-comments ytd-comment-thread-renderer #action-buttons:not(:has(> #toolbar ytd-creator-heart-renderer)) {
+        ytd-comments ytd-comment-thread-renderer #action-buttons:not(:has(> #toolbar ytd-creator-heart-renderer)) #toolbar {
             display: none;
         }
     }
