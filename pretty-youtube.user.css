@@ -4,8 +4,14 @@
 @version        1.0.0
 @description    Pretty YouTube without excess stuff.
 @author         barhatsor
-==/UserStyle== */
 
+@preprocessor stylus
+@var checkbox show_search   'Show search' 0
+@var checkbox show_view_counts   'Show view counts' 0
+@var checkbox show_all_comments   'Show all comments' 0
+@var checkbox show_subscribers   'Show subscriber counts' 0
+@var checkbox show_verified_badges   'Show verified badges' 0
+==/UserStyle== */
 @-moz-document domain("youtube.com"), domain("m.youtube.com"), domain("youtube-nocookie.com") {
     ytd-masthead ytd-topbar-logo-renderer {
         pointer-events: none;
@@ -23,8 +29,10 @@
         margin-left: -8px;
         cursor: pointer;
     }
-    ytd-masthead #center.ytd-masthead {
-        display: none;
+    if (!show_search) {
+        ytd-masthead #center.ytd-masthead {
+            display: none;
+        }
     }
     ytd-masthead #end #buttons ytd-topbar-menu-button-renderer {
         margin-right: -8px;
@@ -119,7 +127,8 @@
     ytd-watch-metadata #title .yt-simple-endpoint {
         display: none;
     }
-    ytd-watch-metadata #title h1 {
+    ytd-watch-metadata #title h1,
+    .yt-sans-28.yt-dynamic-sizing-formatted-string {
         font-family: "Roboto",sans-serif;
         font-weight: 400;
     }
@@ -156,8 +165,10 @@
     ytd-watch-metadata #owner-sub-count {
         display: none !important;
     }
-    ytd-channel-name ytd-badge-supported-renderer {
-        display: none !important;
+    if (!show_verified_badges) {
+        ytd-channel-name ytd-badge-supported-renderer {
+            display: none !important;
+        }
     }
     ytd-watch-metadata #description {
         background: transparent !important;
@@ -184,9 +195,11 @@
     ytd-watch-metadata #description #info-container + tp-yt-paper-tooltip[for="info"] {
         display: none;
     }
-    ytd-watch-metadata #description .yt-formatted-string.bold:first-of-type,
-    ytd-watch-metadata #description .yt-formatted-string.bold:nth-of-type(2) {
-        display: none;
+    if (!show_view_counts) {
+        ytd-watch-metadata #description .yt-formatted-string.bold:first-of-type,
+        ytd-watch-metadata #description .yt-formatted-string.bold:nth-of-type(2) {
+            display: none;
+        }
     }
     ytd-watch-metadata #description .yt-simple-endpoint[href^="/hashtag"] {
         display: none;
@@ -333,8 +346,10 @@
     ytd-comments ytd-comments-header-renderer #placeholder-area.ytd-comment-simplebox-renderer {
       opacity: .7;
     }
-    ytd-comments ytd-comment-thread-renderer:not(:has(> ytd-comment-renderer ytd-creator-heart-renderer)) {
-        display: none;
+    if (!show_all_comments) {
+        ytd-comments ytd-comment-thread-renderer:not(:has(> ytd-comment-renderer ytd-creator-heart-renderer)):not(:has(> ytd-comment-renderer ytd-author-comment-badge-renderer[creator])) {
+            display: none;
+        }
     }
     ytd-comments ytd-comment-thread-renderer ytd-creator-heart-renderer {
         margin-left: -10px;
@@ -350,15 +365,19 @@
     ytd-comments ytd-comment-thread-renderer #expander-contents ytd-comment-renderer {
         margin-left: var(--ytd-margin-5x);
     }
-    ytd-comments ytd-comment-thread-renderer #expander-contents ytd-comment-renderer:not(:has(> #body ytd-author-comment-badge-renderer[creator])) {
-        display: none;
+    if (!show_all_comments) {
+        ytd-comments ytd-comment-thread-renderer #expander-contents ytd-comment-renderer:not(:has(> #body ytd-author-comment-badge-renderer[creator])) {
+            display: none;
+        }
     }
     ytd-comments ytd-comment-thread-renderer #expander-contents #contents {
         border-top: 0;
         padding-top: var(--ytd-margin-2x);
     }
-    ytd-comments ytd-comment-thread-renderer #action-buttons:not(:has(> #toolbar ytd-creator-heart-renderer)) {
-        display: none;
+    if (!show_all_comments) {
+        ytd-comments ytd-comment-thread-renderer #action-buttons:not(:has(> #toolbar ytd-creator-heart-renderer)) {
+            display: none;
+        }
     }
     ytd-comments ytd-comment-thread-renderer #toolbar ytd-toggle-button-renderer,
     ytd-comments ytd-comment-thread-renderer #toolbar #vote-count-middle {
@@ -510,8 +529,10 @@
     #wrapper.tp-yt-app-header-layout > [slot=header] {
         left: 0;
     }
-    .meta-item.ytd-c4-tabbed-header-renderer#subscriber-count {
-        display: none;
+    if (!show_subscribers) {
+        .meta-item.ytd-c4-tabbed-header-renderer#subscriber-count {
+            display: none;
+        }
     }
     #channel-container #buttons #subscribe-button button,
     #channel-container #buttons #sponsor-button button,
@@ -561,6 +582,14 @@
     }
     ytd-search ytd-horizontal-card-list-renderer {
         display: none;
+    }
+    ytd-search #expandable-metadata ytd-horizontal-card-list-renderer {
+        display: block;
+    }
+    if (!show_subscribers) {
+        #metadata.ytd-channel-renderer :is(#dot, #video-count) {
+            display: none;
+        }
     }
     ytd-search ytd-shelf-renderer.ytd-item-section-renderer {
         display: none;
@@ -638,14 +667,19 @@
     ytd-backstage-poll-renderer:not([is-image-poll]) .choice-info.ytd-backstage-poll-renderer {
         border-color: var(--yt-spec-10-percent-layer);
     }
-    ytd-video-meta-block:not([inline-badges]) #metadata-line.ytd-video-meta-block span.ytd-video-meta-block:first-of-type {
-        display: none;
-    }
-    #metadata-line.ytd-video-meta-block > .ytd-video-meta-block:not(:first-of-type):before,
-    ytd-grid-video-renderer:not([inline-badges]) #metadata-line.ytd-grid-video-renderer span.ytd-grid-video-renderer:first-of-type,
-    #metadata-line.ytd-grid-video-renderer>.ytd-grid-video-renderer:not(:first-of-type):before,
-    #video-info.ytd-video-meta-block .yt-formatted-string:is(:first-of-type, :nth-of-type(2)) {
-        display: none;
+    if (!show_view_counts) {
+        ytd-video-meta-block:not([inline-badges]) #metadata-line.ytd-video-meta-block span.ytd-video-meta-block:first-of-type {
+            display: none;
+            }
+        #metadata-line.ytd-video-meta-block > .ytd-video-meta-block:not(:first-of-type):before,
+        ytd-grid-video-renderer:not([inline-badges]) #metadata-line.ytd-grid-video-renderer span.ytd-grid-video-renderer:first-of-type,
+        #metadata-line.ytd-grid-video-renderer>.ytd-grid-video-renderer:not(:first-of-type):before,
+        #video-info.ytd-video-meta-block .yt-formatted-string:is(:first-of-type, :nth-of-type(2)) {
+            display: none;
+        }
+        .metadata-stats.ytd-playlist-byline-renderer .byline-item.ytd-playlist-byline-renderer:nth-of-type(2) {
+            display: none;
+        }
     }
     #label.keyboard-focus.yt-dropdown-menu .yt-dropdown-menu[style-target=label-text] {
         font-weight: 400;
