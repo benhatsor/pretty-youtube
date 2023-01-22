@@ -732,6 +732,8 @@
     #player .html5-video-player .ytp-storyboard-framepreview-img {
         width: 100% !important;
         height: 100% !important;
+        top: 0 !important;
+        left: 0 !important;
     }
     #player .html5-video-player .ytp-chrome-bottom {
         width: calc(100% - 12px * 2) !important;
