@@ -728,6 +728,12 @@
     tp-yt-paper-tooltip {
         display: none !important;
     }
+    .html5-video-player .ytp-tooltip-text-wrapper {
+        display: block !important;
+    }
+    .html5-video-player .ytp-tooltip-text-wrapper .ytp-tooltip-edu {
+        display: none !important;
+    }
     ytd-modal-with-title-and-button-renderer[modal] {
         border-radius: 12px;
         min-width: auto;
