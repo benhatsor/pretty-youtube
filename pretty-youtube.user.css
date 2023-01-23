@@ -3,7 +3,7 @@
 @namespace      github.com/openstyles/stylus
 @version        1.0.0
 @description    Pretty YouTube without excess stuff.
-@author         barhatsor
+@author         benhatsor
 
 @preprocessor stylus
 @var checkbox show_view_counts   'Show view counts' 0
