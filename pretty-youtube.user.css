@@ -417,13 +417,13 @@
     tp-yt-app-drawer #sections ytd-guide-section-renderer:not(:nth-of-type(6)) {
         display: none;
     }
-    #masthead-container.ytd-app {
+    ytd-app:not(:has(> #content ytd-page-manager ytd-search)) #masthead-container.ytd-app {
         position: relative;
     }
     #masthead-container.ytd-app:not(:has(> ytd-masthead #end #buttons .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline)) ~ tp-yt-app-drawer #sections ytd-guide-section-renderer:nth-of-type(5) {
         display: block;
     }
-    ytd-page-manager {
+    ytd-app:not(:has(> #content ytd-page-manager ytd-search)) ytd-page-manager {
         margin-top: 0 !important;
     }
     tp-yt-app-drawer ytd-guide-signin-promo-renderer {
