@@ -407,6 +407,9 @@
     ytd-comments ytd-comment-replies-renderer {
         margin-left: 0;
     }
+    tp-yt-app-drawer {
+        position: absolute;
+    }
     tp-yt-app-drawer #guide-button.ytd-app {
         cursor: pointer;
     }
