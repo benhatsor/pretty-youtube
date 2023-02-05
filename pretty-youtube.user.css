@@ -356,12 +356,18 @@
         display: none;
     }
     ytd-comments ytd-comments-header-renderer #placeholder-area.ytd-comment-simplebox-renderer {
-      opacity: .7;
+        opacity: .7;
+    }
+    ytd-comments ytd-comment-thread-renderer {
+        margin-bottom: calc(16px + 20px);
     }
     if (show_creator_comments) {
-        ytd-comments ytd-comment-thread-renderer:not(:has(> ytd-comment-renderer ytd-creator-heart-renderer)):not(:has(> ytd-comment-renderer ytd-author-comment-badge-renderer[creator])) {
+        ytd-comments ytd-comment-thread-renderer:not(:has(> ytd-comment-renderer ytd-creator-heart-renderer)):not(:has(> ytd-comment-renderer ytd-author-comment-badge-renderer[creator])):not(:has(> ytd-comment-renderer ytd-pinned-comment-badge-renderer)) {
             display: none;
         }
+    }
+    ytd-comments ytd-comment-thread-renderer ytd-comment-replies-renderer ytd-comment-renderer:not(:has(> #body ytd-creator-heart-renderer)):not(:has(> #body ytd-author-comment-badge-renderer[creator])):not(:has(> #body ytd-pinned-comment-badge-renderer)) {
+        display: none;
     }
     ytd-comments ytd-comment-thread-renderer ytd-creator-heart-renderer {
         margin-left: -10px;
@@ -386,10 +392,9 @@
         border-top: 0;
         padding-top: var(--ytd-margin-2x);
     }
-    if (show_creator_comments) {
-        ytd-comments ytd-comment-thread-renderer #action-buttons:not(:has(> #toolbar ytd-creator-heart-renderer)) #toolbar {
-            display: none;
-        }
+    ytd-comments ytd-comment-thread-renderer:has(> ytd-comment-renderer ytd-author-comment-badge-renderer[creator]) #action-buttons:not(:has(> #toolbar ytd-creator-heart-renderer)) #toolbar,
+    ytd-comments ytd-comment-renderer:has(> #body ytd-author-comment-badge-renderer[creator]) #action-buttons:not(:has(> #toolbar ytd-creator-heart-renderer)) #toolbar {
+        display: none;
     }
     ytd-comments ytd-comment-thread-renderer #toolbar ytd-toggle-button-renderer,
     ytd-comments ytd-comment-thread-renderer #toolbar #vote-count-middle {
@@ -676,7 +681,6 @@
             font-weight: 400;
             margin-left: 0;
             margin-top: 2px;
-            margin-bottom: 20px;
             text-transform: none;
         }
         #vote-count-left.ytd-comment-action-buttons-renderer::after {
