@@ -216,10 +216,12 @@
         display: none;
     }
     ytd-watch-metadata #description :is(#expand, #collapse):active,
-    .more-button.ytd-comment-renderer:active, .less-button.ytd-comment-renderer:active {
+    .more-button.ytd-comment-renderer:active, .more-button.ytd-backstage-post-renderer:active,
+    .less-button.ytd-comment-renderer:active, .less-button.ytd-backstage-post-renderer:active {
         color: var(--yt-spec-text-primary);
     }
-    .more-button.ytd-comment-renderer, .less-button.ytd-comment-renderer {
+    .more-button.ytd-comment-renderer, .more-button.ytd-backstage-post-renderer,
+    .less-button.ytd-comment-renderer, .less-button.ytd-backstage-post-renderer {
         text-decoration: none !important;
     }
     ytd-watch-metadata #description div[slot="extra-content"] ytd-video-description-music-section-renderer:last-of-type {
@@ -637,7 +639,7 @@
         padding-bottom: 0;
     }
     ytd-backstage-post-renderer #toolbar.ytd-comment-action-buttons-renderer > *:not(#reply-button-end) {
-        display: none;
+        display: none !important;
     }
     #action-buttons.ytd-backstage-post-renderer {
         margin-top: 0;
