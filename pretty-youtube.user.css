@@ -440,6 +440,10 @@
     tp-yt-app-drawer ytd-guide-signin-promo-renderer {
         display: none;
     }
+    #footer.ytd-guide-renderer > #copyright::after {
+        content: '© pYT, MIT license';
+        display: block;
+    }
     yt-interaction.circular .fill.yt-interaction,
     yt-interaction.circular .stroke.yt-interaction {
         border-radius: 1000px;
