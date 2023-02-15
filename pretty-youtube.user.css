@@ -118,8 +118,14 @@
     ytd-player .ytp-big-mode .ytp-chrome-controls .ytp-fullerscreen-edu-button.ytp-button {
         display: none;
     }
-    ytd-player .ytp-chrome-top-buttons {
-        display: none;
+    .html5-video-player .ytp-cards-teaser {
+        display: none !important;
+    }
+    .html5-video-player .ytp-cards-teaser-shown .ytp-cards-button .ytp-svg-shadow {
+        stroke-opacity: .15;
+    }
+    .html5-video-player .ytp-title-beacon {
+        display: none !important;
     }
     ytd-watch-metadata.ytd-watch-flexy {
         margin-top: var(--ytd-margin-6x);
