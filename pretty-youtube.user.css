@@ -121,8 +121,8 @@
     .html5-video-player .ytp-cards-teaser {
         display: none !important;
     }
-    .html5-video-player .ytp-cards-teaser-shown .ytp-cards-button .ytp-svg-shadow {
-        stroke-opacity: .15;
+    .html5-video-player .ytp-cards-button .ytp-svg-shadow {
+        stroke-opacity: .15 !important;
     }
     .html5-video-player .ytp-title-beacon {
         display: none !important;
