@@ -431,6 +431,9 @@
         cursor: pointer;
         pointer-events: all !important;
     }
+    ytd-topbar-logo-renderer #country-code {
+        display: none;
+    }
     tp-yt-app-drawer #sections ytd-guide-section-renderer:not(:nth-of-type(6)) {
         display: none;
     }
