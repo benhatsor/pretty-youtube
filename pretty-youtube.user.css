@@ -552,6 +552,29 @@
         display: none;
     }
     
+    ytd-engagement-panel-section-list-renderer ytd-transcript-renderer #footer {
+        display: none;
+    }
+    ytd-engagement-panel-section-list-renderer ytd-transcript-search-panel-renderer {
+        background: transparent;
+    }
+    ytd-engagement-panel-section-list-renderer ytd-transcript-segment-list-renderer {
+        background: transparent;
+    }
+    ytd-engagement-panel-section-list-renderer:has(> div ytd-transcript-renderer) #header #title {
+        opacity: 0.6;
+    }
+    ytd-engagement-panel-section-list-renderer .segment.ytd-transcript-segment-renderer {
+        font-size: 1.925rem;
+        line-height: 3.3rem;
+        padding: 0 16px;
+        cursor: default;
+    }
+    ytd-engagement-panel-section-list-renderer .segment-text.ytd-transcript-segment-renderer {
+        font-weight: 400 !important;
+        margin-left: 0;
+        outline: none;
+    }
     ytd-two-column-browse-results-renderer.ytd-browse[page-subtype="home"] {
         display: none;
     }
