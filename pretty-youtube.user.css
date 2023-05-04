@@ -330,12 +330,42 @@
         position: absolute;
         right: 0;
     }
+    ytd-watch-flexy #columns.ytd-watch-flexy {
+        display: grid;
+        grid-auto-flow: column;
+        margin: 0 var(--ytd-margin-6x) !important;
+    }
+    ytd-watch-flexy #primary {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box;
+    }
     ytd-watch-flexy #secondary {
-        width: unset !important;
-        min-width: 0 !important;
+          width: unset !important;
+          min-width: 0 !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+    }
+    ytd-watch-flexy[flexy] #secondary.ytd-watch-flexy:has(> #secondary-inner ytd-engagement-panel-section-list-renderer[visibility=ENGAGEMENT_PANEL_VISIBILITY_EXPANDED]:not([dialog])) #panels {
+          margin-left: var(--ytd-margin-6x);
+    }
+    ytd-watch-flexy[flexy] #secondary ytd-live-chat-frame, ytd-watch-flexy[flexy] ytd-playlist-panel-renderer:not([hidden]), ytd-watch-flexy[flexy] #secondary ytd-donation-shelf-renderer {
+          margin-left: var(--ytd-margin-6x);
     }
     ytd-watch-flexy #related {
         display: none;
+    }
+    .badge.ytd-badge-supported-renderer {
+        border-radius: 3.5px;
+    }
+    .badge-style-type-ypc.ytd-badge-supported-renderer {
+        display: none;
+    }
+    ytd-donation-shelf-renderer[modern-panels] #header-text.ytd-donation-shelf-renderer {
+        font-family: inherit;
+        font-weight: 400;
     }
     ytd-metadata-row-container-renderer {
         display: none;
@@ -875,20 +905,6 @@
         display: none;
     }
     
-    #player .html5-video-container,
-    #player .html5-video-player .video-click-tracking,
-    #player .html5-video-player .video-stream,
-    #player .html5-video-player .ytp-iv-video-content,
-    #player .html5-video-player .ytp-storyboard-framepreview,
-    #player .html5-video-player .ytp-storyboard-framepreview-img {
-        width: 100% !important;
-        height: 100% !important;
-        top: 0 !important;
-        left: 0 !important;
-    }
-    #player .html5-video-player .ytp-chrome-bottom {
-        width: calc(100% - 12px * 2) !important;
-    }
     #player .html5-video-player .ytp-pause-overlay-container {
         display: none;
     }
