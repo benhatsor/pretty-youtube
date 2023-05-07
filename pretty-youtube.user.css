@@ -669,6 +669,12 @@
     ytd-thumbnail #overlays ytd-thumbnail-overlay-time-status-renderer {
         opacity: .5;
     }
+    ytd-thumbnail #overlays ytd-thumbnail-overlay-time-status-renderer yt-icon {
+        display: none;
+    }
+    ytd-thumbnail-overlay-time-status-renderer[overlay-style=SHORTS] #text.ytd-thumbnail-overlay-time-status-renderer {
+        margin-left: 0;
+    }
     ytd-radio-renderer {
         display: none;
     }
