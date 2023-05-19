@@ -20,7 +20,8 @@
     ytd-masthead ytd-topbar-logo-renderer {
         width: 60px;
     }
-    ytd-masthead ytd-topbar-logo-renderer #logo-icon #youtube-paths {
+    ytd-masthead ytd-topbar-logo-renderer #logo-icon #youtube-paths,
+    ytd-masthead ytd-topbar-logo-renderer #logo-icon g:nth-of-type(2) {
         opacity: 0;
     }
     ytd-masthead #start #guide-button.ytd-masthead {
