@@ -1,6 +1,6 @@
 # Pretty YouTube
 
-YouTube but better.
+Pretty YouTube without excess stuff.
 
 <img src="screenshots.png">
 
