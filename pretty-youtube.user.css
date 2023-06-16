@@ -449,6 +449,9 @@
     ytd-comments ytd-comment-replies-renderer {
         margin-left: 0;
     }
+    ytd-comments #paid-comment-background.ytd-comment-renderer {
+        opacity: 0;
+    }
     tp-yt-app-drawer {
         position: absolute;
     }
