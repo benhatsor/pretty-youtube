@@ -6,11 +6,11 @@
 @author         benhatsor
 
 @preprocessor stylus
-@var checkbox show_view_counts   'Show view counts' 0
-@var checkbox show_creator_comments   'Only show comments liked by creator' 1
-@var checkbox show_comment_like_counts   'Show comment like counts' 0
-@var checkbox show_search   'Show search' 0
-@var checkbox show_subscribers   'Show subscriber counts' 0
+@var checkbox show_view_counts   'Show view counts' 1
+@var checkbox show_creator_comments   'Only show comments liked by creator' 0
+@var checkbox show_comment_like_counts   'Show comment like counts' 1
+@var checkbox show_search   'Show search' 1
+@var checkbox show_subscribers   'Show subscriber counts' 1
 @var checkbox show_verified_badges   'Show verified badges' 0
 ==/UserStyle== */
 @-moz-document domain("youtube.com"), domain("m.youtube.com"), domain("youtube-nocookie.com") {
