@@ -131,9 +131,11 @@
     ytd-watch-metadata.ytd-watch-flexy {
         margin-top: var(--ytd-margin-6x);
     }
-    ytd-watch-metadata #title #super-title,
-    ytd-watch-metadata #title .yt-simple-endpoint {
+    ytd-watch-metadata #title #super-title {
         display: none;
+    }
+    ytd-watch-metadata #title .yt-simple-endpoint {
+        color: inherit;
     }
     ytd-watch-metadata #title h1,
     .yt-sans-28.yt-dynamic-sizing-formatted-string {
