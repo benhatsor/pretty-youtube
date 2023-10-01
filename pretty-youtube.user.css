@@ -138,7 +138,8 @@
         color: inherit;
     }
     ytd-watch-metadata #title h1,
-    .yt-sans-28.yt-dynamic-sizing-formatted-string {
+    .yt-sans-28.yt-dynamic-sizing-formatted-string,
+    ytd-engagement-panel-title-header-renderer[modern-panels]:not([ads-semantic-text]) #title-text.ytd-engagement-panel-title-header-renderer {
         font-family: "Roboto",sans-serif;
         font-weight: 400;
     }
