@@ -603,7 +603,7 @@
     }
     ytd-engagement-panel-section-list-renderer .segment.ytd-transcript-segment-renderer {
         font-size: 1.925rem;
-        line-height: 3.3rem;
+        line-height: 1.5;
         padding: 0 16px;
         cursor: default;
     }
