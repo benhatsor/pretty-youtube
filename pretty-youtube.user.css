@@ -603,14 +603,23 @@
     }
     ytd-engagement-panel-section-list-renderer .segment.ytd-transcript-segment-renderer {
         font-size: 1.925rem;
+        font-size: 21.3333px;
         line-height: 1.5;
+        font-weight: 400;
         padding: 0 16px;
         cursor: default;
+        align-items: center;
     }
     ytd-engagement-panel-section-list-renderer .segment-text.ytd-transcript-segment-renderer {
         font-weight: 400 !important;
         margin-left: 0;
         outline: none;
+        color: #fff;
+        -webkit-font-smoothing: antialiased;
+    }
+    ytd-engagement-panel-section-list-renderer .segment-start-offset.ytd-transcript-segment-renderer:has(.segment-timestamp.ytd-transcript-segment-renderer) {
+        order: 1;
+        margin-right: 0;
     }
     ytd-two-column-browse-results-renderer.ytd-browse[page-subtype="home"] {
         display: none;
