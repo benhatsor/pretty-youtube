@@ -334,6 +334,9 @@
         position: absolute;
         right: 0;
     }
+    ytd-watch-flexy #ytd-player.ytd-watch-flexy {
+        border-radius: 0 !important;
+    }
     ytd-watch-flexy #columns.ytd-watch-flexy {
         display: grid;
         grid-auto-flow: column;
