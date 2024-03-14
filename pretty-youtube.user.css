@@ -12,6 +12,7 @@
 @var checkbox show_comment_like_counts   'Show comment like counts' 1
 @var checkbox show_subscribers   'Show subscriber counts' 1
 @var checkbox hide_verified_badges   'Hide verified badges' 1
+@var checkbox hide_most_replayed   'Hide "most replayed" tooltips in video timelines' 1
 @var checkbox hide_voice_search   'Hide voice search button' 1
 ==/UserStyle== */
 @-moz-document domain("youtube.com"), domain("m.youtube.com"), domain("youtube-nocookie.com") {
@@ -19,7 +20,7 @@
         pointer-events: none;
     }
     ytd-masthead ytd-topbar-logo-renderer {
-        width: 60px;
+        width: 60px !important;
     }
     ytd-masthead ytd-topbar-logo-renderer #logo-icon #youtube-paths,
     ytd-masthead ytd-topbar-logo-renderer #logo-icon g:nth-of-type(2) {
@@ -37,8 +38,22 @@
             display: none;
         }
     }
+    ytd-masthead ytd-searchbox.ytd-masthead {
+      margin: 0;
+      padding: 0;
+      transform: translateX(-50%);
+      left: 50%;
+      position: absolute;
+      width: 50%;
+    }
+    ytd-masthead #container.ytd-searchbox {
+        margin-left: 0;
+    }
+    ytd-masthead #end.ytd-masthead {
+        min-width: auto;
+    }
     ytd-masthead #end #buttons ytd-topbar-menu-button-renderer {
-        margin-right: -8px;
+        margin-right: 0;
     }
     ytd-masthead #end #buttons ytd-topbar-menu-button-renderer #button {
         display: none;
@@ -68,6 +83,26 @@
     ytd-player .iv-branding,
     #player .html5-video-player .iv-branding {
         display: none;
+    }
+    if (hide_most_replayed) {
+        ytd-player .ytp-heat-map-container {
+            display: none !important;
+        }
+        ytd-player .ytp-tooltip.ytp-rounded-tooltip.ytp-preview:not(.ytp-text-detail) {
+            margin-top: 7px;            
+        }
+        ytd-player .ytp-preview:not(.ytp-text-detail) .ytp-tooltip-title {
+            display: none;
+        }
+        ytd-player .ytp-preview:not(.ytp-text-detail) .ytp-tooltip-text {
+            top: 33px !important;
+        }
+    }
+    ytd-player .ytp-tooltip.ytp-rounded-tooltip.ytp-preview:not(.ytp-text-detail) {
+        border-radius: 2px;
+    }
+    ytd-player .ytp-tooltip.ytp-rounded-tooltip.ytp-preview:not(.ytp-text-detail) .ytp-tooltip-bg {
+        border-radius: 0;
     }
     ytd-player .ytp-next-button,
     ytd-player .ytp-prev-button,
@@ -585,7 +620,14 @@
     #player.skeleton.flexy #player-wrap {
         width: auto;
     }
+    #player.skeleton.flexy #player-api {
+        border-radius: 0 !important;
+    }
+    #player.skeleton.flexy .ytp-chrome-bottom {
+        display: none;
+    }
     #watch-page-skeleton {
+        display: none !important;
         margin: 0;
         padding-left: var(--ytd-margin-6x);
         padding-right: var(--ytd-margin-6x);
@@ -596,6 +638,9 @@
     #watch-page-skeleton #container {
         width: 100%;
         max-width: 800px;
+    }
+    .watch-skeleton {
+        display: none !important;
     }
     .watch-skeleton .text-shell {
         border-radius: 8px;
@@ -715,6 +760,24 @@
     ytd-search #title.ytd-shelf-renderer {
         font-weight: 400;
         color: var(--yt-spec-text-secondary);
+    }
+    #header.ytd-video-description-transcript-section-renderer {
+        display: none;
+    }
+    #sub-header.ytd-video-description-transcript-section-renderer {
+        display: none;
+    }
+    .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline:active:hover {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+    .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
+        color: inherit;
+    }
+    ytd-reel-shelf-renderer {
+        display: none;
     }
     ytd-reel-shelf-renderer.ytd-item-section-renderer {
         display: none;
@@ -887,6 +950,13 @@
     #links-holder.ytd-c4-tabbed-header-renderer img.yt-img-shadow {
         border-radius: 4px;
     }
+    .yt-core-attributed-string--highlight-text-decorator {
+        background: transparent !important;
+        color: #3ea6ff;
+    }
+    img.yt-core-attributed-string__image-element.yt-core-image {
+        filter: grayscale(1);
+    }
     yt-chip-cloud-chip-renderer {
         color: var(--text-primary-color) !important;
         background: transparent !important;
@@ -975,6 +1045,9 @@
     }
     ytd-video-renderer #channel-info ytd-channel-name {
         pointer-events: all;
+    }
+    ytd-channel-name {
+        z-index: 0 !important;
     }
     ytd-video-renderer ytd-badge-supported-renderer {
         display: none;
