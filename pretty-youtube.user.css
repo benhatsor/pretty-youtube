@@ -78,6 +78,17 @@
             display: none;
         }
     }
+    #search-clear-button.ytd-searchbox {
+        margin-right: 4px;
+    }
+    ytd-masthead ytd-searchbox[has-focus] #search-clear-button.ytd-searchbox {
+        margin-right: 3px;
+    }
+    .sbdd_a {
+        width: 50%;
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
     .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline:hover {
         background: transparent;
     }
@@ -636,7 +647,7 @@
         margin: 0;
         padding-left: var(--ytd-margin-6x);
         padding-right: var(--ytd-margin-6x);
-        display: flex;
+        /* display: flex; */
         align-items: center;
         justify-content: center;
     }
