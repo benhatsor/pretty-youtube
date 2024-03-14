@@ -267,12 +267,31 @@
         cursor: default;
         pointer-events: none;
     }
+    ytd-watch-metadata #description ytd-video-description-infocards-section-renderer {
+        display: none;
+    }
     #container.ytd-playlist-panel-renderer {
         border: 0;
     }
     ytd-merch-shelf-renderer {
         display: none;
     }
+    
+    
+    /* Video player fixes */
+    
+    ytd-watch-flexy[flexy] #player-container-inner.ytd-watch-flexy {
+        padding-top: 0;
+    }
+    ytd-watch-flexy[flexy] #player-container.ytd-watch-flexy {
+        position: relative;
+    }
+    .html5-video-player .video-click-tracking, .html5-video-player .video-stream {
+        position: relative;
+    }
+    
+    /* End video player fixes */
+    
     ytd-watch-flexy[flexy][js-panel-height_] #playlist.ytd-watch-flexy {
         transition: .1s cubic-bezier(0,0,0.2,1);
         overflow: hidden;
