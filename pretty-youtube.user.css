@@ -46,8 +46,13 @@
       position: absolute;
       width: 50%;
     }
+    
     ytd-masthead #container.ytd-searchbox {
         margin-left: 0;
+        padding: 0 4px 0 16px !important;
+    }
+    ytd-masthead #search-icon.ytd-searchbox {
+        display: none !important;
     }
     ytd-masthead #end.ytd-masthead {
         min-width: auto;
