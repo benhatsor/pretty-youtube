@@ -574,8 +574,17 @@
     tp-yt-app-drawer #sections ytd-guide-section-renderer:not(:nth-of-type(6)) {
         display: none;
     }
-    ytd-app:not(:has(> #content ytd-page-manager ytd-search)) #masthead-container.ytd-app {
-        position: relative;
+    #masthead-container.ytd-app {
+        background: var(--yt-spec-base-background);
+    }
+    #masthead-container.ytd-app,
+    #guide-wrapper.ytd-app {
+        position: sticky;
+        top: 0;
+        height: auto;
+    }
+    #guide-inner-content.ytd-app {
+        flex: unset;
     }
     #masthead-container.ytd-app:not(:has(> ytd-masthead #end #buttons .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline)) ~ tp-yt-app-drawer #sections ytd-guide-section-renderer:nth-of-type(5) {
         display: block;
@@ -751,6 +760,9 @@
         ytd-c4-tabbed-header-renderer[use-page-header-style] .meta-item.ytd-c4-tabbed-header-renderer:has(#subscriber-count) {
             display: none;
         }
+    }
+    #sponsor-button.ytd-c4-tabbed-header-renderer, #purchase-button.ytd-c4-tabbed-header-renderer {
+        display: none;
     }
     #channel-container #buttons #subscribe-button button,
     #channel-container #buttons #sponsor-button button,
