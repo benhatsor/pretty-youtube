@@ -346,6 +346,9 @@
     .html5-video-player .video-click-tracking, .html5-video-player .video-stream {
         position: relative;
     }
+    ytd-watch-flexy[flexy] #player-container-outer.ytd-watch-flexy {
+        max-width: unset;
+    }
     
     /* End video player fixes */
     
