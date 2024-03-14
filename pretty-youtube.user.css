@@ -6,12 +6,13 @@
 @author         benhatsor
 
 @preprocessor stylus
-@var checkbox show_view_counts   'Show view counts' 1
 @var checkbox show_creator_comments   'Only show comments liked by creator' 0
-@var checkbox show_comment_like_counts   'Show comment like counts' 1
 @var checkbox show_search   'Show search' 1
+@var checkbox show_view_counts   'Show view counts' 1
+@var checkbox show_comment_like_counts   'Show comment like counts' 1
 @var checkbox show_subscribers   'Show subscriber counts' 1
-@var checkbox show_verified_badges   'Show verified badges' 0
+@var checkbox hide_verified_badges   'Hide verified badges' 1
+@var checkbox hide_voice_search   'Hide voice search button' 1
 ==/UserStyle== */
 @-moz-document domain("youtube.com"), domain("m.youtube.com"), domain("youtube-nocookie.com") {
     ytd-masthead ytd-topbar-logo-renderer {
@@ -51,6 +52,11 @@
         width: 40px;
         height: 40px;
         border-radius: 40px;
+    }
+    if (hide_voice_search) {
+        ytd-masthead #voice-search-button.ytd-masthead {
+            display: none;
+        }
     }
     .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline:hover {
         background: transparent;
@@ -176,7 +182,7 @@
     ytd-watch-metadata #owner-sub-count {
         display: none !important;
     }
-    if (!show_verified_badges) {
+    if (hide_verified_badges) {
         ytd-channel-name ytd-badge-supported-renderer {
             display: none !important;
         }
@@ -491,6 +497,9 @@
     }
     ytd-comments #paid-comment-background.ytd-comment-renderer {
         opacity: 0;
+    }
+    ytd-comments #paid-comment-chip.ytd-comment-renderer {
+        display: none;
     }
     tp-yt-app-drawer {
         position: absolute;
