@@ -602,7 +602,7 @@
         display: none;
     }
     #footer.ytd-guide-renderer > #copyright::after {
-        content: '© pYT, MIT license';
+        content: '© PYT, MIT License';
         display: block;
     }
     yt-interaction.circular .fill.yt-interaction,
