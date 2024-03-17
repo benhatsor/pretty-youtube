@@ -22,6 +22,12 @@
     ytd-masthead ytd-topbar-logo-renderer {
         width: 60px !important;
     }
+    ytd-topbar-logo-renderer yt-icon.ytd-logo#logo-icon svg > g:nth-of-type(1) path:not([fill="#FF0000"]) {
+        fill: #FF0000;
+    }
+    ytd-topbar-logo-renderer yt-icon.ytd-logo#logo-icon svg > g:nth-of-type(1) path[fill="#FF0000"] {
+        fill: #ff000024;
+    }
     ytd-masthead ytd-topbar-logo-renderer #logo-icon #youtube-paths,
     ytd-masthead ytd-topbar-logo-renderer #logo-icon g:nth-of-type(2) {
         opacity: 0;
@@ -632,6 +638,9 @@
     
     ytd-app {
         background: var(--yt-spec-base-background);
+    }
+    #page-manager.ytd-app {
+        margin-top: 0;
     }
     #player.skeleton.flexy {
         padding-bottom: 0;
