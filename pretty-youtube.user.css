@@ -12,8 +12,8 @@
 @var checkbox show_comment_like_counts   'Show comment like counts' 1
 @var checkbox show_subscribers   'Show subscriber counts' 1
 @var checkbox hide_verified_badges   'Hide verified badges' 1
-@var checkbox hide_most_replayed   'Hide "most replayed" tooltips in video timelines' 1
 @var checkbox hide_voice_search   'Hide voice search button' 1
+@var checkbox hide_most_replayed   'Hide "most replayed" tooltips in video timelines' 0
 ==/UserStyle== */
 @-moz-document domain("youtube.com"), domain("m.youtube.com"), domain("youtube-nocookie.com") {
     ytd-masthead ytd-topbar-logo-renderer {
@@ -109,15 +109,6 @@
     if (hide_most_replayed) {
         ytd-player .ytp-heat-map-container {
             display: none !important;
-        }
-        ytd-player .ytp-tooltip.ytp-rounded-tooltip.ytp-preview:not(.ytp-text-detail) {
-            margin-top: 7px;            
-        }
-        ytd-player .ytp-preview:not(.ytp-text-detail) .ytp-tooltip-title {
-            display: none;
-        }
-        ytd-player .ytp-preview:not(.ytp-text-detail) .ytp-tooltip-text {
-            top: 33px !important;
         }
     }
     ytd-player .ytp-tooltip.ytp-rounded-tooltip.ytp-preview:not(.ytp-text-detail) {
@@ -354,6 +345,7 @@
     }
     ytd-watch-flexy[flexy] #player-container-outer.ytd-watch-flexy {
         max-width: unset;
+        width: fit-content;
     }
     
     /* End video player fixes */
@@ -583,7 +575,10 @@
     #masthead-container.ytd-app {
         background: var(--yt-spec-base-background);
     }
-    #masthead-container.ytd-app,
+    #masthead-container.ytd-app {
+        position: fixed;
+        top: 0;
+    }
     #guide-wrapper.ytd-app {
         position: sticky;
         top: 0;
@@ -594,9 +589,6 @@
     }
     #masthead-container.ytd-app:not(:has(> ytd-masthead #end #buttons .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline)) ~ tp-yt-app-drawer #sections ytd-guide-section-renderer:nth-of-type(5) {
         display: block;
-    }
-    ytd-app:not(:has(> #content ytd-page-manager ytd-search)) ytd-page-manager {
-        margin-top: 0 !important;
     }
     tp-yt-app-drawer ytd-guide-signin-promo-renderer {
         display: none;
@@ -638,9 +630,6 @@
     
     ytd-app {
         background: var(--yt-spec-base-background);
-    }
-    #page-manager.ytd-app {
-        margin-top: 0;
     }
     #player.skeleton.flexy {
         padding-bottom: 0;
