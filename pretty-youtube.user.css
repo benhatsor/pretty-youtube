@@ -345,7 +345,6 @@
     }
     ytd-watch-flexy[flexy] #player-container-outer.ytd-watch-flexy {
         max-width: unset;
-        width: fit-content;
     }
     
     /* End video player fixes */
