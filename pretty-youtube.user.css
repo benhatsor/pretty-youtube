@@ -7,12 +7,14 @@
 
 @preprocessor stylus
 @var checkbox show_creator_comments   'Only show comments liked by creator' 0
+@var checkbox hide_end_cards   'Hide end cards' 1
+@var checkbox hide_verified_badges   'Hide verified badges' 1
 @var checkbox show_search   'Show search' 1
 @var checkbox show_view_counts   'Show view counts' 1
 @var checkbox show_comment_like_counts   'Show comment like counts' 1
 @var checkbox show_subscribers   'Show subscriber counts' 1
-@var checkbox hide_verified_badges   'Hide verified badges' 1
 @var checkbox hide_voice_search   'Hide voice search button' 1
+@var checkbox hide_info_cards   'Hide info cards' 0
 @var checkbox hide_most_replayed   'Hide "most replayed" tooltips in video timelines' 0
 ==/UserStyle== */
 @-moz-document domain("youtube.com"), domain("m.youtube.com"), domain("youtube-nocookie.com") {
@@ -235,32 +237,32 @@
             display: none !important;
         }
     }
-    ytd-watch-metadata #description {
+    ytd-watch-metadata #description.ytd-watch-metadata {
         background: transparent !important;
         cursor: default !important;
     }
-    ytd-watch-metadata #description:has(> #description-inner ytd-text-inline-expander[is-expanded]) {
+    ytd-watch-metadata #description.ytd-watch-metadata:has(> #description-inner ytd-text-inline-expander[is-expanded]) {
         cursor: unset !important;
     }
-    ytd-watch-metadata #description yt-interaction {
+    ytd-watch-metadata #description.ytd-watch-metadata yt-interaction {
         display: none;
     }
-    ytd-watch-metadata #description #description-inner {
+    ytd-watch-metadata #description.ytd-watch-metadata #description-inner {
         margin-left: 0;
         margin-right: 0;
         margin-bottom: 0;
     }
-    ytd-watch-metadata #description #info-container {
+    ytd-watch-metadata #description.ytd-watch-metadata #info-container {
         margin-bottom: var(--ytd-margin-2x);
         color: var(--disabled-text-color);
     }
-    ytd-watch-metadata #description #info-container .yt-formatted-string {
+    ytd-watch-metadata #description.ytd-watch-metadata #info-container .yt-formatted-string {
         font-weight: 400;
     }
-    ytd-watch-metadata #description #info-container .yt-formatted-string:nth-of-type(5) {
+    ytd-watch-metadata #description.ytd-watch-metadata #info-container .yt-formatted-string:nth-of-type(5) {
          display: none;
     }
-    ytd-watch-metadata #description #info-container + tp-yt-paper-tooltip[for="info"] {
+    ytd-watch-metadata #description.ytd-watch-metadata #info-container + tp-yt-paper-tooltip[for="info"] {
         display: none;
     }
     if (!show_view_counts) {
@@ -268,20 +270,20 @@
             display: none;
         }
     }
-    ytd-watch-metadata #description .yt-simple-endpoint[href^="/hashtag"] {
+    ytd-watch-metadata #description.ytd-watch-metadata .yt-simple-endpoint[href^="/hashtag"] {
         display: none;
     }
-    ytd-watch-metadata #description #expand {
+    ytd-watch-metadata #description.ytd-watch-metadata #expand {
         display: block;
         color: var(--yt-spec-text-secondary);
     }
-    ytd-watch-metadata #description #collapse {
+    ytd-watch-metadata #description.ytd-watch-metadata #collapse {
         color: var(--yt-spec-text-secondary);
     }
-    ytd-watch-metadata #description :is(#expand, #collapse) paper-ripple {
+    ytd-watch-metadata #description.ytd-watch-metadata :is(#expand, #collapse) paper-ripple {
         display: none;
     }
-    ytd-watch-metadata #description :is(#expand, #collapse):active,
+    ytd-watch-metadata #description.ytd-watch-metadata :is(#expand, #collapse):active,
     .more-button.ytd-comment-renderer:active, .more-button.ytd-backstage-post-renderer:active,
     .less-button.ytd-comment-renderer:active, .less-button.ytd-backstage-post-renderer:active {
         color: var(--yt-spec-text-primary);
@@ -290,7 +292,7 @@
     .less-button.ytd-comment-renderer, .less-button.ytd-backstage-post-renderer {
         text-decoration: none !important;
     }
-    ytd-watch-metadata #description div[slot="extra-content"] ytd-video-description-music-section-renderer:last-of-type {
+    ytd-watch-metadata #description.ytd-watch-metadata div[slot="extra-content"] ytd-video-description-music-section-renderer:last-of-type {
         padding-bottom: 0;
     }
     ytd-watch-metadata ytd-rich-list-header-renderer #title.ytd-rich-list-header-renderer {
@@ -307,23 +309,39 @@
     ytd-watch-metadata ytd-rich-list-header-renderer #navigation-button .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text yt-touch-feedback-shape {
         display: none !important;
     }
-    ytd-watch-metadata #description div[slot="extra-content"] ytd-info-row-renderer:last-of-type {
+    ytd-watch-metadata #description.ytd-watch-metadata div[slot="extra-content"] ytd-info-row-renderer:last-of-type {
         border-bottom: 0;
     }
-    ytd-watch-metadata #description div[slot="extra-content"] #premium-upsell-link {
+    ytd-watch-metadata #description.ytd-watch-metadata div[slot="extra-content"] #premium-upsell-link {
         display: none;
     }
-    ytd-watch-metadata #description div[slot="extra-content"] #topic-link {
+    ytd-watch-metadata #description.ytd-watch-metadata div[slot="extra-content"] #topic-link {
         display: none;
     }
-    ytd-watch-metadata #description div[slot="extra-content"] ytd-video-description-music-section-renderer yt-formatted-string[has-link-only_]:not([force-default-style]) a.yt-simple-endpoint.yt-formatted-string {
+    ytd-watch-metadata #description.ytd-watch-metadata div[slot="extra-content"] ytd-video-description-music-section-renderer yt-formatted-string[has-link-only_]:not([force-default-style]) a.yt-simple-endpoint.yt-formatted-string {
         color: inherit;
         cursor: default;
         pointer-events: none;
     }
-    ytd-watch-metadata #description ytd-video-description-infocards-section-renderer {
+    ytd-watch-metadata #description.ytd-watch-metadata ytd-video-description-infocards-section-renderer > *:not(#infocards-section.ytd-video-description-infocards-section-renderer) {
         display: none;
     }
+    #infocards-section.ytd-video-description-infocards-section-renderer ytd-compact-infocard-renderer.ytd-video-description-infocards-section-renderer:last-of-type {
+        margin-bottom: 0;
+    }
+    ytd-watch-metadata #description.ytd-watch-metadata ytd-video-description-infocards-section-renderer:has(#infocards-section.ytd-video-description-infocards-section-renderer:empty) {
+        padding: 0;
+    }
+    
+    if (hide_info_cards) {
+        ytd-watch-metadata #description.ytd-watch-metadata ytd-video-description-infocards-section-renderer {
+            display: none;
+        }
+        .ytp-chrome-top .ytp-cards-button {
+            display: none;
+        }
+    }
+    
     #container.ytd-playlist-panel-renderer {
         border: 0;
     }
@@ -1079,6 +1097,12 @@
     }
     ytd-video-renderer ytd-badge-supported-renderer {
         display: none;
+    }
+    
+    if (hide_end_cards) {
+        .html5-video-player .ytp-ce-element {
+            display: none;
+        }
     }
     
     #player .html5-video-player .ytp-pause-overlay-container {
