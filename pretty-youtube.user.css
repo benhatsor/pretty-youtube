@@ -521,13 +521,18 @@
     ytd-comments ytd-comment-thread-renderer {
         margin-bottom: calc(16px + 20px);
     }
-    if (show_creator_comments) {
-        ytd-comments ytd-comment-thread-renderer:not(:has(> ytd-comment-renderer ytd-creator-heart-renderer)):not(:has(> ytd-comment-renderer ytd-author-comment-badge-renderer[creator])):not(:has(> ytd-comment-renderer ytd-pinned-comment-badge-renderer)) {
-            display: none;
+    if (!show_creator_comments) {
+        ytd-comments ytd-comment-thread-renderer #expander-contents :is(ytd-comment-renderer, ytd-comment-view-model):not(:last-of-type) {
+            margin-bottom: calc(16px + 20px);
         }
     }
-    ytd-comments ytd-comment-thread-renderer ytd-comment-replies-renderer ytd-comment-renderer:not(:has(> #body ytd-creator-heart-renderer)):not(:has(> #body ytd-author-comment-badge-renderer[creator])):not(:has(> #body ytd-pinned-comment-badge-renderer)) {
-        display: none;
+    if (show_creator_comments) {
+        ytd-comments ytd-comment-thread-renderer:not(:has(ytd-creator-heart-renderer)):not(:has(ytd-author-comment-badge-renderer[creator])):not(:has(ytd-pinned-comment-badge-renderer)) {
+            display: none;
+        }
+        ytd-comments ytd-comment-thread-renderer ytd-comment-replies-renderer :is(ytd-comment-renderer, ytd-comment-view-model):not(:has(> #body ytd-creator-heart-renderer)):not(:has(> #body ytd-author-comment-badge-renderer[creator])):not(:has(> #body ytd-pinned-comment-badge-renderer)) {
+            display: none;
+        }
     }
     ytd-comments ytd-comment-thread-renderer ytd-creator-heart-renderer {
         margin-left: -10px;
@@ -540,11 +545,11 @@
     #expander.ytd-comment-replies-renderer .expander-header.ytd-comment-replies-renderer[teaser] #more-replies.ytd-comment-replies-renderer {
         display: none;
     }
-    ytd-comments ytd-comment-thread-renderer #expander-contents ytd-comment-renderer {
+    ytd-comments ytd-comment-thread-renderer #expander-contents :is(ytd-comment-renderer, ytd-comment-view-model) {
         margin-left: var(--ytd-margin-5x);
     }
     if (show_creator_comments) {
-        ytd-comments ytd-comment-thread-renderer #expander-contents ytd-comment-renderer:not(:has(> #body ytd-author-comment-badge-renderer[creator])) {
+        ytd-comments ytd-comment-thread-renderer #expander-contents :is(ytd-comment-renderer, ytd-comment-view-model):not(:has(ytd-author-comment-badge-renderer[creator])) {
             display: none;
         }
     }
@@ -552,8 +557,8 @@
         border-top: 0;
         padding-top: var(--ytd-margin-2x);
     }
-    ytd-comments ytd-comment-thread-renderer:has(> ytd-comment-renderer ytd-author-comment-badge-renderer[creator]) #action-buttons:not(:has(> #toolbar ytd-creator-heart-renderer)) #toolbar,
-    ytd-comments ytd-comment-renderer:has(> #body ytd-author-comment-badge-renderer[creator]) #action-buttons:not(:has(> #toolbar ytd-creator-heart-renderer)) #toolbar {
+    ytd-comments ytd-comment-thread-renderer:has(> :is(ytd-comment-renderer, ytd-comment-view-model) ytd-author-comment-badge-renderer[creator]) #action-buttons:not(:has(> #toolbar ytd-creator-heart-renderer)) #toolbar,
+    ytd-comments :is(ytd-comment-renderer, ytd-comment-view-model):has(> #body ytd-author-comment-badge-renderer[creator]) #action-buttons:not(:has(> #toolbar ytd-creator-heart-renderer)) #toolbar {
         display: none;
     }
     ytd-comments ytd-comment-thread-renderer #toolbar ytd-toggle-button-renderer,
@@ -948,6 +953,10 @@
             margin-left: 0;
         }
         ytd-comment-engagement-bar#action-buttons.ytd-comment-view-model:has(#vote-count-left.ytd-comment-action-buttons-renderer[hidden], #vote-count-middle.ytd-comment-engagement-bar[hidden]) {
+            display: none;
+        }
+        
+        ytd-comments ytd-comment-view-model:has(ytd-author-comment-badge-renderer[creator]) ytd-comment-engagement-bar#action-buttons:not(:has(ytd-creator-heart-renderer)) {
             display: none;
         }
     }
