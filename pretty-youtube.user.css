@@ -575,7 +575,7 @@
     ytd-comments #paid-comment-background.ytd-comment-renderer {
         opacity: 0;
     }
-    ytd-comments #paid-comment-chip.ytd-comment-renderer {
+    ytd-comments #paid-comment-chip.ytd-comment-renderer, #paid-comment-chip.ytd-comment-view-model {
         display: none;
     }
     tp-yt-app-drawer {
