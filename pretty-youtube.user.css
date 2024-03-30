@@ -285,11 +285,13 @@
     }
     ytd-watch-metadata #description.ytd-watch-metadata :is(#expand, #collapse):active,
     .more-button.ytd-comment-renderer:active, .more-button.ytd-backstage-post-renderer:active,
-    .less-button.ytd-comment-renderer:active, .less-button.ytd-backstage-post-renderer:active {
+    .less-button.ytd-comment-renderer:active, .less-button.ytd-backstage-post-renderer:active,
+    .more-button.ytd-comment-view-model:active, .less-button.ytd-comment-view-model:active {
         color: var(--yt-spec-text-primary);
     }
     .more-button.ytd-comment-renderer, .more-button.ytd-backstage-post-renderer,
-    .less-button.ytd-comment-renderer, .less-button.ytd-backstage-post-renderer {
+    .less-button.ytd-comment-renderer, .less-button.ytd-backstage-post-renderer,
+    .more-button.ytd-comment-view-model, .less-button.ytd-comment-view-model {
         text-decoration: none !important;
     }
     ytd-watch-metadata #description.ytd-watch-metadata div[slot="extra-content"] ytd-video-description-music-section-renderer:last-of-type {
@@ -332,6 +334,9 @@
     ytd-watch-metadata #description.ytd-watch-metadata ytd-video-description-infocards-section-renderer:has(#infocards-section.ytd-video-description-infocards-section-renderer:empty) {
         padding: 0;
     }
+    ytd-watch-metadata #description.ytd-watch-metadata ytd-structured-description-content-renderer.ytd-watch-metadata #footer-section.ytd-horizontal-card-list-renderer {
+        display: none;
+    }
     
     if (hide_info_cards) {
         ytd-watch-metadata #description.ytd-watch-metadata ytd-video-description-infocards-section-renderer {
@@ -367,6 +372,9 @@
     
     /* End video player fixes */
     
+    ytd-watch-flexy[flexy] .ytp-load-progress {
+        display: none;
+    }
     ytd-watch-flexy[flexy][js-panel-height_] #playlist.ytd-watch-flexy {
         transition: .1s cubic-bezier(0,0,0.2,1);
         overflow: hidden;
@@ -504,7 +512,7 @@
     ytd-comments ytd-comments-header-renderer ytd-comment-simplebox-renderer {
         margin-right: 0;
     }
-    ytd-comments ytd-comments-header-renderer #author-thumbnail.ytd-comment-simplebox-renderer {
+    ytd-comments ytd-comments-header-renderer #author-thumbnail.ytd-comment-simplebox-renderer, #author-thumbnail.ytd-comment-view-model {
         display: none;
     }
     ytd-comments ytd-comments-header-renderer #placeholder-area.ytd-comment-simplebox-renderer {
@@ -608,6 +616,9 @@
         display: block;
     }
     tp-yt-app-drawer ytd-guide-signin-promo-renderer {
+        display: none;
+    }
+    #guide-links-primary.ytd-guide-renderer {
         display: none;
     }
     #footer.ytd-guide-renderer > #copyright::after {
@@ -922,16 +933,22 @@
         margin: 0;
     }
     if (show_comment_like_counts) {
-        #vote-count-left.ytd-comment-action-buttons-renderer {
+        #vote-count-left.ytd-comment-action-buttons-renderer:not([hidden]), #vote-count-middle.ytd-comment-engagement-bar:not([hidden]) {
             display: inline-block !important;
             font-weight: 400;
             margin-left: 0;
             margin-top: 2px;
             text-transform: none;
         }
-        #vote-count-left.ytd-comment-action-buttons-renderer::after {
+        #vote-count-left.ytd-comment-action-buttons-renderer::after, #vote-count-middle.ytd-comment-engagement-bar::after {
             content: ' likes';
             color: var(--yt-spec-text-disabled);
+        }
+        #toolbar.ytd-comment-engagement-bar {
+            margin-left: 0;
+        }
+        ytd-comment-engagement-bar#action-buttons.ytd-comment-view-model:has(#vote-count-left.ytd-comment-action-buttons-renderer[hidden], #vote-count-middle.ytd-comment-engagement-bar[hidden]) {
+            display: none;
         }
     }
     #content-attachment.ytd-backstage-post-renderer ytd-video-renderer.ytd-backstage-post-renderer, #content-attachment.ytd-backstage-post-renderer ytd-playlist-renderer.ytd-backstage-post-renderer {
@@ -1000,7 +1017,7 @@
         background: transparent !important;
         color: #3ea6ff;
     }
-    img.yt-core-attributed-string__image-element.yt-core-image {
+    .yt-core-attributed-string--highlight-text-decorator img.yt-core-attributed-string__image-element.yt-core-image {
         filter: grayscale(1);
     }
     yt-chip-cloud-chip-renderer {
@@ -1124,4 +1141,3 @@
         display: none;
     }
 }
-
