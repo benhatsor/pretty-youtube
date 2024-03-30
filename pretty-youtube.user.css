@@ -7,6 +7,8 @@
 
 @preprocessor stylus
 @var checkbox show_creator_comments   'Only show comments liked by creator' 0
+@var checkbox hide_info_cards   'Hide info cards' 0
+@var checkbox hide_most_replayed   'Hide "most replayed" tooltips in video timelines' 0
 @var checkbox hide_end_cards   'Hide end cards' 1
 @var checkbox hide_verified_badges   'Hide verified badges' 1
 @var checkbox show_search   'Show search' 1
@@ -14,8 +16,6 @@
 @var checkbox show_comment_like_counts   'Show comment like counts' 1
 @var checkbox show_subscribers   'Show subscriber counts' 1
 @var checkbox hide_voice_search   'Hide voice search button' 1
-@var checkbox hide_info_cards   'Hide info cards' 0
-@var checkbox hide_most_replayed   'Hide "most replayed" tooltips in video timelines' 0
 ==/UserStyle== */
 @-moz-document domain("youtube.com"), domain("m.youtube.com"), domain("youtube-nocookie.com") {
     ytd-masthead ytd-topbar-logo-renderer {
@@ -1148,5 +1148,9 @@
     }
     #player .html5-video-player .ytp-button.ytp-youtube-button {
         display: none;
+    }
+    
+    #player .html5-video-player *:not(a[href])  {
+        -webkit-user-drag: none;
     }
 }
