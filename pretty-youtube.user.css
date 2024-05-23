@@ -583,6 +583,9 @@
     ytd-comments #paid-comment-chip.ytd-comment-renderer, #paid-comment-chip.ytd-comment-view-model {
         display: none;
     }
+    #paid-comment-background.ytd-comment-view-model {
+        display: none;
+    }
     tp-yt-app-drawer {
         position: absolute;
     }
