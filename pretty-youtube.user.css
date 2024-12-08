@@ -24,10 +24,10 @@
     ytd-masthead ytd-topbar-logo-renderer {
         width: 60px !important;
     }
-    ytd-topbar-logo-renderer yt-icon.ytd-logo#logo-icon svg > g:nth-of-type(1) path:not([fill="#FF0000"]) {
+    ytd-topbar-logo-renderer yt-icon.ytd-logo#logo-icon svg > g:nth-of-type(1) path[fill="white"] {
         fill: #FF0000;
     }
-    ytd-topbar-logo-renderer yt-icon.ytd-logo#logo-icon svg > g:nth-of-type(1) path[fill="#FF0000"] {
+    ytd-topbar-logo-renderer yt-icon.ytd-logo#logo-icon svg > g:nth-of-type(1) path:not([fill="white"]) {
         fill: #ff000024;
     }
     ytd-masthead ytd-topbar-logo-renderer #logo-icon #youtube-paths,
@@ -356,18 +356,23 @@
     
     
     /* Video player fixes */
-    
-    ytd-watch-flexy[flexy] #player-container-inner.ytd-watch-flexy {
+
+    ytd-watch-flexy[flexy]:not([full-bleed-player]) #player-container-outer.ytd-watch-flexy {
+        max-width: unset;
+        min-width: var(--ytd-watch-flexy-min-player-width);
+    }
+
+    ytd-watch-flexy[flexy]:not([full-bleed-player]) #player-container-inner.ytd-watch-flexy {
         padding-top: 0;
     }
-    ytd-watch-flexy[flexy] #player-container.ytd-watch-flexy {
+
+    ytd-watch-flexy[flexy]:not([full-bleed-player]) #player-container.ytd-watch-flexy {
         position: relative;
+        margin: auto;
     }
-    .html5-video-player .video-click-tracking, .html5-video-player .video-stream {
+
+    ytd-watch-flexy[flexy]:not([full-bleed-player]) .html5-video-player .video-click-tracking, .html5-video-player .video-stream {
         position: relative;
-    }
-    ytd-watch-flexy[flexy] #player-container-outer.ytd-watch-flexy {
-        max-width: unset;
     }
     
     /* End video player fixes */
@@ -448,14 +453,16 @@
         position: absolute;
         right: 0;
     }
+    
     ytd-watch-flexy #ytd-player.ytd-watch-flexy {
         border-radius: 0 !important;
     }
+    
     ytd-watch-flexy #columns.ytd-watch-flexy {
-        display: grid;
-        grid-auto-flow: column;
+        justify-content: center;
         margin: 0 var(--ytd-margin-6x) !important;
     }
+    
     ytd-watch-flexy #primary {
         margin-left: 0 !important;
         margin-right: 0 !important;
@@ -469,6 +476,7 @@
           padding-left: 0 !important;
           padding-right: 0 !important;
     }
+    
     ytd-watch-flexy[flexy] #secondary.ytd-watch-flexy:has(> #secondary-inner ytd-engagement-panel-section-list-renderer[visibility=ENGAGEMENT_PANEL_VISIBILITY_EXPANDED]:not([dialog])) #panels {
           margin-left: var(--ytd-margin-6x);
     }
@@ -661,6 +669,18 @@
         display: none;
     }
     ytd-player .ytp-exp-ppp-update .ytp-paid-content-overlay-chevron {
+        display: none;
+    }
+    
+    .html5-video-player:not(.ytp-color-party) .ytp-play-progress {
+        background: var(--yt-spec-static-brand-red,#f03) !important;
+    }
+
+    .ytp-color-party .ytp-play-progress {
+        background-image: none !important;
+    }
+    
+    #teaser-carousel.ytd-watch-metadata {
         display: none;
     }
     
@@ -995,6 +1015,20 @@
             display: none;
         }
     }
+    #bottom-grid.ytd-watch-grid {
+        display: none !important;
+    }
+    #secondary.ytd-watch-grid {
+        width: auto;
+        margin: calc(var(--ytd-watch-grid-horizontal-page-margins) * 2)
+    }
+    #columns.ytd-watch-grid {
+        flex-direction: column;
+    }
+    #primary.ytd-watch-grid {
+        margin-left: auto;
+        margin-right: auto;
+    }
     #label.keyboard-focus.yt-dropdown-menu .yt-dropdown-menu[style-target=label-text] {
         font-weight: 400;
     }
@@ -1048,7 +1082,8 @@
     .image-wrapper.ytd-hero-playlist-thumbnail-renderer,
     .html5-video-player .ytp-ce-video,
     .html5-video-player .ytp-ce-playlist,
-    .html5-video-player .ytp-ce-expanding-overlay-background {
+    .html5-video-player .ytp-ce-expanding-overlay-background,
+    ytd-watch-grid[rounded-player-large][default-layout] #ytd-player.ytd-watch-grid {
         border-radius: 0 !important;
     }
     ytd-channel-video-player-renderer[rounded] #player.ytd-channel-video-player-renderer {
@@ -1156,4 +1191,5 @@
     #player .html5-video-player *:not(a[href])  {
         -webkit-user-drag: none;
     }
+    
 }
