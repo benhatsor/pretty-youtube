@@ -15,6 +15,7 @@
 @var checkbox show_view_counts   'Show view counts' 1
 @var checkbox show_comment_like_counts   'Show comment like counts' 1
 @var checkbox show_subscribers   'Show subscriber counts' 1
+@var checkbox show_comment_counts   'Show comment counts' 1
 @var checkbox hide_voice_search   'Hide voice search button' 1
 ==/UserStyle== */
 @-moz-document domain("youtube.com"), domain("m.youtube.com"), domain("youtube-nocookie.com") {
@@ -525,8 +526,14 @@
     ytd-comments ytd-comments-header-renderer #title #count .count-text {
         font-weight: 400;
     }
-    ytd-comments ytd-comments-header-renderer #title #count .count-text .yt-formatted-string:first-of-type {
-        display: none;
+    if (!show_comment_counts) {
+        ytd-comments ytd-comments-header-renderer #title #count .count-text .yt-formatted-string:first-of-type {
+            display: none;
+        }
+        
+        ytd-shorts #shorts-panel-container.ytd-shorts #header #title.ytd-engagement-panel-title-header-renderer #contextual-info.ytd-engagement-panel-title-header-renderer {
+          display: none;
+        }
     }
     ytd-comments ytd-comments-header-renderer #title #sort-menu {
         display: none;
