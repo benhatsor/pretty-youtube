@@ -268,12 +268,6 @@
     #description-placeholder.ytd-watch-metadata {
         display: none;
     }
-    ytd-watch-metadata.ytd-watch-flexy:not([description-collapsed]) #description.ytd-watch-metadata:has(#description-placeholder.ytd-watch-metadata) #info-container {
-        margin-bottom: 0;
-    }
-    ytd-watch-metadata #description.ytd-watch-metadata:has(#description-placeholder.ytd-watch-metadata) :is(ytd-structured-description-content-renderer.ytd-watch-metadata, #collapse.ytd-text-inline-expander) {
-        margin-top: 0;
-    }
     ytd-watch-metadata #description.ytd-watch-metadata #info-container .yt-formatted-string:nth-of-type(5) {
          display: none;
     }
