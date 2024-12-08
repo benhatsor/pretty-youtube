@@ -957,6 +957,19 @@
     ytd-search ytd-shelf-renderer.ytd-item-section-renderer {
         display: none;
     }
+    
+    ytd-item-section-renderer:not(:last-of-type) ytd-expanded-shelf-contents-renderer {
+      margin-bottom: 0;
+    }
+
+    ytd-item-section-renderer:not(:first-of-type) #contents.ytd-shelf-renderer {
+      margin-top: calc(24px / 2);
+    }
+
+    .grid-subheader.ytd-shelf-renderer {
+      margin-top: 0;
+    }
+
     ytd-backstage-post-thread-renderer {
         border: 0;
         border-bottom: 1px solid var(--yt-spec-10-percent-layer);
