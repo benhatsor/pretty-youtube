@@ -1134,6 +1134,26 @@
         font-weight: inherit;
     }
     
+    yt-reel-metapanel-view-model yt-shorts-suggested-action-view-model.YtShortsSuggestedActionViewModelStaticHost,
+    yt-reel-metapanel-view-model .YtReelChannelBarViewModelReelSubscribeButton {
+        display: none;
+    }
+    ytd-reel-video-renderer {
+        margin-bottom: 0;
+    }
+    ytd-reel-video-renderer:not([is-active]) {
+        display: none;
+    }
+    ytd-shorts {
+        --ytd-shorts-player-height: calc(100vh - 77px);
+    }
+    .navigation-container.ytd-shorts {
+        display: none;
+    }
+    ytd-shorts #shorts-container.ytd-shorts {
+        overflow: hidden !important;
+    }
+    
     .ytp-tooltip-text-wrapper,
     tp-yt-paper-tooltip {
         display: none !important;
