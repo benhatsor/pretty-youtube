@@ -557,9 +557,6 @@
             display: none;
         }
     }
-    ytd-comments ytd-comment-thread-renderer ytd-creator-heart-renderer {
-        margin-left: -10px;
-    }
     ytd-comments ytd-comment-thread-renderer #replies:not(:has(> ytd-comment-replies-renderer #creator-thumbnail.ytd-comment-replies-renderer)) {
         display: none;
     }
