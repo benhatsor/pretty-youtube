@@ -259,6 +259,20 @@
     ytd-watch-metadata #description.ytd-watch-metadata #info-container .yt-formatted-string {
         font-weight: 400;
     }
+    if (!show_view_counts) {
+        ytd-watch-metadata #description.ytd-watch-metadata #info-container .yt-formatted-string:first-of-type, ytd-watch-metadata #description.ytd-watch-metadata #info-container .yt-formatted-string:nth-of-type(2) {
+            display: none;
+        }
+    }
+    #description-placeholder.ytd-watch-metadata {
+        display: none;
+    }
+    ytd-watch-metadata.ytd-watch-flexy:not([description-collapsed]) #description.ytd-watch-metadata:has(#description-placeholder.ytd-watch-metadata) #info-container {
+        margin-bottom: 0;
+    }
+    ytd-watch-metadata #description.ytd-watch-metadata:has(#description-placeholder.ytd-watch-metadata) :is(ytd-structured-description-content-renderer.ytd-watch-metadata, #collapse.ytd-text-inline-expander) {
+        margin-top: 0;
+    }
     ytd-watch-metadata #description.ytd-watch-metadata #info-container .yt-formatted-string:nth-of-type(5) {
          display: none;
     }
@@ -900,6 +914,10 @@
     if (!show_subscribers) {
         #metadata.ytd-channel-renderer :is(#dot, #video-count) {
             display: none;
+        }
+        .yt-content-metadata-view-model-wiz--inline .yt-content-metadata-view-model-wiz__metadata-row:nth-of-type(2) .yt-content-metadata-view-model-wiz__metadata-text:first-of-type,
+        .yt-content-metadata-view-model-wiz--inline .yt-content-metadata-view-model-wiz__metadata-row:nth-of-type(2) .yt-content-metadata-view-model-wiz__delimiter {
+          display: none;
         }
     }
     ytd-search ytd-shelf-renderer.ytd-item-section-renderer {
