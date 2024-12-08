@@ -9,9 +9,9 @@
 @var checkbox show_creator_comments   'Only show comments liked by creator' 0
 @var checkbox hide_info_cards   'Hide info cards' 0
 @var checkbox hide_most_replayed   'Hide "most replayed" tooltips in video timelines' 0
+@var checkbox hide_end_cards   'Hide end cards' 0
+@var checkbox hide_verified_badges   'Hide verified badges' 0
 @var checkbox hide_comment_counts   'Hide comment counts' 1
-@var checkbox hide_end_cards   'Hide end cards' 1
-@var checkbox hide_verified_badges   'Hide verified badges' 1
 @var checkbox show_search   'Show search' 1
 @var checkbox show_view_counts   'Show view counts' 1
 @var checkbox show_comment_like_counts   'Show comment like counts' 1
