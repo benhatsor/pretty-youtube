@@ -260,11 +260,6 @@
     ytd-watch-metadata #description.ytd-watch-metadata #info-container .yt-formatted-string {
         font-weight: 400;
     }
-    if (!show_view_counts) {
-        ytd-watch-metadata #description.ytd-watch-metadata #info-container .yt-formatted-string:first-of-type, ytd-watch-metadata #description.ytd-watch-metadata #info-container .yt-formatted-string:nth-of-type(2) {
-            display: none;
-        }
-    }
     #description-placeholder.ytd-watch-metadata {
         display: none;
     }
