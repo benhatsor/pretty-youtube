@@ -337,6 +337,9 @@
     ytd-watch-metadata #description.ytd-watch-metadata ytd-video-description-infocards-section-renderer > *:not(#infocards-section.ytd-video-description-infocards-section-renderer) {
         display: none;
     }
+    ytd-video-description-infocards-section-renderer {
+        display: none;
+    }
     #infocards-section.ytd-video-description-infocards-section-renderer ytd-compact-infocard-renderer.ytd-video-description-infocards-section-renderer:last-of-type {
         margin-bottom: 0;
     }
@@ -382,6 +385,20 @@
 
     ytd-watch-flexy[flexy]:not([full-bleed-player]) .html5-video-player .video-click-tracking, .html5-video-player .video-stream {
         position: relative;
+    }
+    
+    /* utilize the accurate width of the bottom bar to resize the player: */
+
+    .ytp-chrome-bottom {
+      position: relative;
+      margin-top: -48px;
+      left: 0 !important;
+      padding: 0 12px;
+    }
+    
+    ytd-watch-flexy[flexy]:not([full-bleed-player]) .html5-video-player {
+        width: max-content;
+        margin: auto;
     }
     
     /* End video player fixes */
@@ -806,6 +823,18 @@
         order: 1;
         margin-right: 0;
     }
+    ytd-engagement-panel-section-list-renderer ytd-transcript-search-panel-renderer #header:has(ytd-transcript-search-box-renderer) {
+        background: var(--yt-spec-brand-background-solid);
+    }
+    ytd-secondary-search-container-renderer {
+        display: none !important;
+    }
+    #chip-bar.ytd-search-header-renderer {
+        display: none !important;
+    }
+    #filter-button.ytd-search-header-renderer {
+        margin-left: auto;
+    }
     ytd-two-column-browse-results-renderer.ytd-browse[page-subtype="home"] {
         display: none;
     }
@@ -1031,6 +1060,9 @@
             display: none;
         }
     }
+    #expandable-metadata.ytd-video-renderer {
+        display: none;
+    }
     #bottom-grid.ytd-watch-grid {
         display: none !important;
     }
@@ -1062,6 +1094,9 @@
     }
     #email.ytd-channel-about-metadata-renderer, #email-container.ytd-channel-about-metadata-renderer a.ytd-channel-about-metadata-renderer {
         text-decoration: none;
+    }
+    ytd-recognition-shelf-renderer {
+        display: none;
     }
     ytd-section-list-renderer:not([hide-bottom-separator]):not([page-subtype=history]):not([page-subtype=memberships-and-purchases]):not([page-subtype=ypc-offers]) #contents.ytd-section-list-renderer>*.ytd-section-list-renderer:not(:last-child):not(ytd-page-introduction-renderer):not([item-dismissed]).ytd-section-list-renderer:not([has-destination-shelf-renderer]).ytd-section-list-renderer:not(ytd-minor-moment-header-renderer) {
         border-bottom: 0;
@@ -1202,6 +1237,9 @@
         z-index: 0 !important;
     }
     ytd-video-renderer ytd-badge-supported-renderer {
+        display: none;
+    }
+    ytd-badge-supported-renderer {
         display: none;
     }
     
