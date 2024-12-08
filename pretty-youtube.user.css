@@ -1153,6 +1153,12 @@
     ytd-shorts #shorts-container.ytd-shorts {
         overflow: hidden !important;
     }
+    ytd-reel-player-overlay-renderer #actions.ytd-reel-player-overlay-renderer :is(#like-button, #dislike-button, #share-button, #pivot-button) {
+        display: none;
+    }
+    ytd-reel-player-overlay-renderer #actions.ytd-reel-player-overlay-renderer {
+        padding-bottom: 8px !important;
+    }
     
     .ytp-tooltip-text-wrapper,
     tp-yt-paper-tooltip {
