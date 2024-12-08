@@ -9,13 +9,13 @@
 @var checkbox show_creator_comments   'Only show comments liked by creator' 0
 @var checkbox hide_info_cards   'Hide info cards' 0
 @var checkbox hide_most_replayed   'Hide "most replayed" tooltips in video timelines' 0
+@var checkbox hide_comment_counts   'Hide comment counts' 1
 @var checkbox hide_end_cards   'Hide end cards' 1
 @var checkbox hide_verified_badges   'Hide verified badges' 1
 @var checkbox show_search   'Show search' 1
 @var checkbox show_view_counts   'Show view counts' 1
 @var checkbox show_comment_like_counts   'Show comment like counts' 1
 @var checkbox show_subscribers   'Show subscriber counts' 1
-@var checkbox show_comment_counts   'Show comment counts' 1
 @var checkbox hide_voice_search   'Hide voice search button' 1
 ==/UserStyle== */
 @-moz-document domain("youtube.com"), domain("m.youtube.com"), domain("youtube-nocookie.com") {
@@ -526,7 +526,7 @@
     ytd-comments ytd-comments-header-renderer #title #count .count-text {
         font-weight: 400;
     }
-    if (!show_comment_counts) {
+    if (hide_comment_counts) {
         ytd-comments ytd-comments-header-renderer #title #count .count-text .yt-formatted-string:first-of-type {
             display: none;
         }
