@@ -389,16 +389,28 @@
     
     /* utilize the accurate width of the bottom bar to resize the player: */
 
-    .ytp-chrome-bottom {
-      position: relative;
-      margin-top: -48px;
-      left: 0 !important;
-      padding: 0 12px;
+    ytd-watch-flexy[flexy]:not([full-bleed-player]) .ytp-chrome-bottom {
+        position: relative;
+        margin: 0 12px;
+        margin-top: calc(-48px - 3px); /* (this element has padding-top: 3px set) */
+        height: 48px !important;
+        left: 0 !important;
+    }
+    
+    ytd-watch-flexy[flexy]:not([full-bleed-player]) .html5-video-player.ytp-small-mode .ytp-chrome-bottom {
+        margin-top: calc(-36px - 3px); /* (this element has padding-top: 3px set) */
+        height: 36px !important;
     }
     
     ytd-watch-flexy[flexy]:not([full-bleed-player]) .html5-video-player {
         width: max-content;
         margin: auto;
+    }
+    
+    
+    /* fix fine scrubbing */
+    .ytp-fine-scrubbing-container {
+        z-index: 1;
     }
     
     /* End video player fixes */
