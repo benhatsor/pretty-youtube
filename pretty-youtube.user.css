@@ -48,6 +48,9 @@
             display: none;
         }
     }
+    ytd-masthead ytd-searchbox.ytd-masthead {
+        margin: 0;
+    }
     if (hide_voice_search) {
         ytd-masthead ytd-searchbox.ytd-masthead {
           margin: 0;
