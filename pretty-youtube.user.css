@@ -10,13 +10,14 @@
 @var checkbox hide_info_cards   'Hide info cards' 0
 @var checkbox hide_most_replayed   'Hide "most replayed" tooltips in video timelines' 0
 @var checkbox hide_end_cards   'Hide end cards' 0
-@var checkbox hide_verified_badges   'Hide verified badges' 0
+@var checkbox hide_verified_badges   'Hide verified badges' 1
 @var checkbox hide_comment_counts   'Hide comment counts' 1
+@var checkbox hide_subscribers   'Hide subscriber counts' 1
 @var checkbox show_search   'Show search' 1
 @var checkbox show_view_counts   'Show view counts' 1
 @var checkbox show_comment_like_counts   'Show comment like counts' 1
-@var checkbox show_subscribers   'Show subscriber counts' 1
 @var checkbox hide_voice_search   'Hide voice search button' 1
+@var checkbox muted_thumbnail_duration   'Subtle thumbnail duration indicators' 1
 ==/UserStyle== */
 @-moz-document domain("youtube.com"), domain("m.youtube.com"), domain("youtube-nocookie.com") {
     ytd-masthead ytd-topbar-logo-renderer {
@@ -627,6 +628,15 @@
     ytd-comments #paid-comment-chip.ytd-comment-renderer, #paid-comment-chip.ytd-comment-view-model {
         display: none;
     }
+    
+    ytd-comments ytd-comment-view-model #action-menu.ytd-comment-view-model {
+      opacity: 0;
+    }
+
+    ytd-comments ytd-comment-view-model:hover #action-menu.ytd-comment-view-model {
+      opacity: 1;
+    }
+    
     #paid-comment-background.ytd-comment-view-model {
         display: none;
     }
@@ -858,7 +868,7 @@
     #wrapper.tp-yt-app-header-layout > [slot=header] {
         left: 0;
     }
-    if (!show_subscribers) {
+    if (hide_subscribers) {
         ytd-c4-tabbed-header-renderer[use-page-header-style] .meta-item.ytd-c4-tabbed-header-renderer:has(#subscriber-count) {
             display: none;
         }
@@ -924,8 +934,10 @@
     ytd-thumbnail #hover-overlays {
         display: none;
     }
-    ytd-thumbnail #overlays ytd-thumbnail-overlay-time-status-renderer {
-        opacity: .5;
+    if (muted_thumbnail_duration) {
+        ytd-thumbnail #overlays ytd-thumbnail-overlay-time-status-renderer {
+            opacity: .5;
+        }
     }
     ytd-thumbnail #overlays ytd-thumbnail-overlay-time-status-renderer yt-icon {
         display: none;
@@ -945,7 +957,7 @@
     ytd-search #expandable-metadata ytd-horizontal-card-list-renderer {
         display: block;
     }
-    if (!show_subscribers) {
+    if (hide_subscribers) {
         #metadata.ytd-channel-renderer :is(#dot, #video-count) {
             display: none;
         }
