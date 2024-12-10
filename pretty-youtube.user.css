@@ -48,15 +48,17 @@
             display: none;
         }
     }
-    ytd-masthead ytd-searchbox.ytd-masthead {
-      margin: 0;
-      padding: 0;
-      transform: translateX(-50%);
-      left: 50%;
-      position: absolute;
-      width: 50%;
+    if (hide_voice_search) {
+        ytd-masthead ytd-searchbox.ytd-masthead {
+          margin: 0;
+          padding: 0;
+          transform: translateX(-50%);
+          left: 50%;
+          position: absolute;
+          width: 50%;
+        }
     }
-    
+
     ytd-masthead #container.ytd-searchbox {
         margin-left: 0;
         padding: 0 4px 0 16px !important;
