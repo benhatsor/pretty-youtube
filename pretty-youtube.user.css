@@ -362,7 +362,7 @@
             display: none;
         }
     }
-    ytd-watch-metadata #description.ytd-watch-metadata div[slot="extra-content"].style-scope.ytd-watch-metadata {
+    ytd-watch-metadata #description.ytd-watch-metadata div[slot="extra-content"].style-scope.ytd-watch-metadata ytd-structured-description-content-renderer #items > *:not(ytd-video-description-transcript-section-renderer) {
         display: none;
     }
     
@@ -520,6 +520,7 @@
           min-width: 0 !important;
           padding-left: 0 !important;
           padding-right: 0 !important;
+          max-width: var(--ytd-watch-flexy-sidebar-width) !important;
     }
     
     ytd-watch-flexy[flexy] #secondary.ytd-watch-flexy:has(> #secondary-inner ytd-engagement-panel-section-list-renderer[visibility=ENGAGEMENT_PANEL_VISIBILITY_EXPANDED]:not([dialog])) #panels {
