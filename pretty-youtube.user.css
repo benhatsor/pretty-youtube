@@ -529,6 +529,9 @@
     ytd-watch-flexy[flexy] #secondary ytd-live-chat-frame, ytd-watch-flexy[flexy] ytd-playlist-panel-renderer:not([hidden]), ytd-watch-flexy[flexy] #secondary ytd-donation-shelf-renderer {
           margin-left: var(--ytd-margin-6x);
     }
+    ytd-watch-flexy[flexy] #secondary ytd-live-chat-frame {
+        width: 100%;
+    }
     ytd-watch-flexy #related {
         display: none;
     }
