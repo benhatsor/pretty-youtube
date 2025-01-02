@@ -81,6 +81,9 @@
     ytd-masthead #end #buttons ytd-notification-topbar-button-renderer {
         display: none;
     }
+    ytd-masthead #end #buttons button:not(#avatar-btn) {
+        display: none;
+    }
     ytd-masthead #end #buttons .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
         color: var(--yt-spec-icon-active-other);
         border: 0;
@@ -358,6 +361,9 @@
         .ytp-chrome-top .ytp-cards-button {
             display: none;
         }
+    }
+    ytd-watch-metadata #description.ytd-watch-metadata div[slot="extra-content"].style-scope.ytd-watch-metadata {
+        display: none;
     }
     
     #container.ytd-playlist-panel-renderer {
@@ -645,6 +651,9 @@
     #paid-comment-background.ytd-comment-view-model {
         display: none;
     }
+    #sponsor-comment-badge.ytd-comment-view-model {
+        display: none;
+    }
     tp-yt-app-drawer {
         position: absolute;
     }
@@ -930,6 +939,14 @@
     ytd-reel-shelf-renderer.ytd-item-section-renderer {
         display: none;
     }
+    
+    ytd-two-column-browse-results-renderer.style-scope.ytd-browse[page-subtype="trending"] ytd-item-section-renderer.style-scope.ytd-section-list-renderer:has(yt-horizontal-list-renderer) {
+        display: none;
+    }
+    ytd-two-column-browse-results-renderer.style-scope.ytd-browse[page-subtype="trending"] ytd-item-section-renderer.style-scope.ytd-section-list-renderer:first-of-type:has(yt-horizontal-list-renderer) + ytd-item-section-renderer #contents.ytd-shelf-renderer {
+        margin-top: 24px;
+    }
+    
     ytd-expandable-metadata-renderer[round-container] {
         background: transparent;
     }
@@ -983,9 +1000,11 @@
       margin-top: calc(24px / 2);
     }
 
+    /*
     .grid-subheader.ytd-shelf-renderer {
       margin-top: 0;
     }
+    */
 
     ytd-backstage-post-thread-renderer {
         border: 0;
@@ -1154,12 +1173,12 @@
     .yt-core-attributed-string--highlight-text-decorator img.yt-core-attributed-string__image-element.yt-core-image {
         filter: grayscale(1);
     }
-    yt-chip-cloud-chip-renderer {
+    yt-chip-cloud-chip-renderer #chip-container {
         color: var(--text-primary-color) !important;
         background: transparent !important;
         opacity: .8;
     }
-    yt-chip-cloud-chip-renderer[selected] {
+    yt-chip-cloud-chip-renderer[selected] #chip-container {
         background: var(--yt-spec-10-percent-layer) !important;
         opacity: 1;
     }
