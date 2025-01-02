@@ -1296,10 +1296,10 @@
     ytd-channel-name {
         z-index: 0 !important;
     }
-    ytd-video-renderer ytd-badge-supported-renderer {
+    ytd-video-renderer ytd-badge-supported-renderer:not(:has(.badge-style-type-ad)) {
         display: none;
     }
-    ytd-badge-supported-renderer {
+    ytd-badge-supported-renderer:not(:has(.badge-style-type-ad)) {
         display: none;
     }
     
