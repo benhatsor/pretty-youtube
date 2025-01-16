@@ -996,6 +996,10 @@
         display: none;
     }
     
+    ytd-item-section-renderer[page-subtype="trending"] ytd-shelf-renderer:has(#title-container:not([hidden]))  {
+        display: none;
+    }
+    
     ytd-item-section-renderer:not(:last-of-type) ytd-expanded-shelf-contents-renderer {
       margin-bottom: 0;
     }
