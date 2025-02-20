@@ -392,6 +392,8 @@
 
     ytd-watch-flexy[flexy]:not([full-bleed-player]) .html5-video-player .video-click-tracking, .html5-video-player .video-stream {
         position: relative;
+        left: 0 !important;
+        margin: auto;
     }
     
     /* utilize the accurate width of the bottom bar to resize the player: */
