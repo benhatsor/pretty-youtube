@@ -1263,6 +1263,9 @@
     ytd-shorts yt-reel-metapanel-view-model .ytShortsSuggestedActionViewModelDynamicHost {
         display: none;
     }
+    ytd-shorts yt-reel-metapanel-view-model .ytReelChannelBarViewModelReelSubscribeButton {
+        display: none;
+    }
     
     .ytp-tooltip-text-wrapper,
     tp-yt-paper-tooltip {
