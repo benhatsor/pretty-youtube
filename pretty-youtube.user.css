@@ -1266,6 +1266,9 @@
     ytd-shorts yt-reel-metapanel-view-model .ytReelChannelBarViewModelReelSubscribeButton {
         display: none;
     }
+    ytd-shorts[enable-new-carousel] .reel-video-in-sequence-new.ytd-shorts {
+        height: auto;
+    }
     
     .ytp-tooltip-text-wrapper,
     tp-yt-paper-tooltip {
