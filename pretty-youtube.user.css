@@ -679,6 +679,9 @@
     tp-yt-app-drawer #sections ytd-guide-section-renderer:not(:nth-of-type(6)) {
         display: none;
     }
+    ytd-app[frosted-glass-exp] tp-yt-app-drawer.ytd-app[persistent] {
+        z-index: 2005;
+    }
     #masthead-container.ytd-app {
         background: var(--yt-spec-base-background);
     }
