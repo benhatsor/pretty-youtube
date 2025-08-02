@@ -1257,7 +1257,7 @@
     ytd-shorts #shorts-container.ytd-shorts {
         overflow: hidden !important;
     }
-    ytd-reel-player-overlay-renderer #actions.ytd-reel-player-overlay-renderer :is(#like-button, #dislike-button, #share-button, #pivot-button) {
+    ytd-reel-player-overlay-renderer #actions.ytd-reel-player-overlay-renderer :is(#like-button, #dislike-button, #share-button, #pivot-button, #remix-button) {
         display: none;
     }
     ytd-reel-player-overlay-renderer #actions.ytd-reel-player-overlay-renderer {
