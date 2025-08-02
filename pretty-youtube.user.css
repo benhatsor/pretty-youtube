@@ -1001,6 +1001,15 @@
       display: none;
     }
     
+    ytd-search yt-official-card-view-model.ytd-item-section-renderer {
+          background: transparent !important;
+          border-bottom: 1px solid var(--yt-spec-10-percent-layer);
+          padding-left: 0;
+          padding-top: 0;
+          padding-right: 0;
+          border-radius: 0;
+    }
+    
     ytd-item-section-renderer[page-subtype="trending"] ytd-shelf-renderer:has(#title-container:not([hidden]))  {
         display: none;
     }
