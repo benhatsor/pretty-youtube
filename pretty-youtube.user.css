@@ -691,7 +691,7 @@
     }
     #guide-wrapper.ytd-app {
         position: sticky;
-        top: var(--ytd-masthead-height, var(--ytd-toolbar-height));;
+        top: var(--ytd-masthead-height, var(--ytd-toolbar-height));
         height: auto;
     }
     #guide-inner-content.ytd-app {
