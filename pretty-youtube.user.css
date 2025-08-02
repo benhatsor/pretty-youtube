@@ -997,8 +997,8 @@
           display: none;
         }
     }
-    ytd-search ytd-shelf-renderer.ytd-item-section-renderer {
-        display: none;
+    ytd-search ytd-shelf-renderer.ytd-item-section-renderer, ytd-search ytd-exploratory-results-renderer.ytd-item-section-renderer, ytd-horizontal-card-list-renderer.ytd-item-section-renderer, ytd-reel-shelf-renderer.ytd-item-section-renderer, grid-shelf-view-model.ytd-item-section-renderer, ytd-shelf-renderer.ytd-item-section-renderer {
+      display: none;
     }
     
     ytd-item-section-renderer[page-subtype="trending"] ytd-shelf-renderer:has(#title-container:not([hidden]))  {
