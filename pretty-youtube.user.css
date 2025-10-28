@@ -182,6 +182,9 @@
     ytd-player .ytp-ce-subscribe-container {
         display: none;
     }
+    ytd-player .ytp-fullscreen-grid {
+        display: none;
+    }
     ytd-player .ytp-big-mode .ytp-gradient-top,
     ytd-player .ytp-big-mode .ytp-chrome-top {
         display: none;
