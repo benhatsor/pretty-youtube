@@ -705,9 +705,11 @@
     #guide-inner-content.ytd-app {
         flex: unset;
     }
+    /*
     #masthead-container.ytd-app:not(:has(> ytd-masthead #end #buttons .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline)) ~ tp-yt-app-drawer #sections ytd-guide-section-renderer:nth-of-type(5) {
         display: block;
     }
+    */
     tp-yt-app-drawer ytd-guide-signin-promo-renderer {
         display: none;
     }
