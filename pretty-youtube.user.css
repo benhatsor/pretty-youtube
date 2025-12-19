@@ -592,7 +592,7 @@
         opacity: .7;
     }
     ytd-comments ytd-comment-thread-renderer {
-        margin-bottom: calc(16px + 20px);
+        /* margin-bottom: calc(16px + 20px); */
     }
     if (!show_creator_comments) {
         ytd-comments ytd-comment-thread-renderer #expander-contents :is(ytd-comment-renderer, ytd-comment-view-model):not(:last-of-type) {
