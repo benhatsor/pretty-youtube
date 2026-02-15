@@ -1268,7 +1268,7 @@
         margin-bottom: 0;
     }
     ytd-reel-video-renderer:not([is-active]) {
-        display: none;
+        /* display: none; */
     }
     ytd-shorts {
         --ytd-shorts-player-height: calc(100vh - 77px);
